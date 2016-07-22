@@ -1,0 +1,61 @@
+.square{
+    width:100px;
+    height:100px;
+    border-radius: 15px;
+    font-weight: bold;
+    color: white;
+    background-color: #3D9970;
+    button:focus {outline:0;}
+}
+
+.fr {
+	color: green;
+	font-weight: bold;
+	letter-spacing: 2px;
+
+}
+
+.r {
+	width: 200px;
+	height: 50px;
+	font-weight: bold;
+	color: white;
+	background-color: #3D9970;
+	border-radius: 25px;
+	font: x-large,  Helvetica;
+}
+
+.lastWinnerBoard {
+	color: green;
+	font-weight: bold;
+	text-decoration: underline;
+	letter-spacing: 3px;
+
+}
+
+#container{
+    text-align:center;
+}
+
+#board {
+    display: inline-block;
+    margin-top:2%;
+
+}
+.invisible {
+    visibility:hidden;
+}
+.visible {
+    visibility:visible;
+}
+
+table {
+    text-align:center;
+      font: 400 30px/1.5 'Pacifico', Helvetica, sans-serif;
+}
+p {
+    margin-left:25%;
+    margin-right:25%;
+}
+
+button:focus {outline:0;}

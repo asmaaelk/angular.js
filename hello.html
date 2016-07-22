@@ -1,0 +1,62 @@
+<!doctype html>
+<html ng-app="ticTacToeApp">
+<head>
+	<meta charset="utf-8">
+	<title> Tic Tac Toe Game!</title>
+	<link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+ <div id="container" ng-controller="BoardController" ng-init="newGame()">
+  <div class="lastWinnerBoard">Last winner was: Player {{lastWinner.$value}} </div>
+  <div id="board">
+  	<br>
+  	<!--<div  ng-hide="won">Player {{currentPlayer}}'s turn!</span>-->
+  	<div ng-game></div>
+      <br><br>
+      <table>
+        <tr id="row1">
+          <td ng-repeat = "tile in gameBoard[0]" ng-disabled = "isDisabled"><button class ="square" ng-click ="play(tile); disableButton()">{{ tile.value }}</button></td>
+        </tr>
+        <tr id="row2">
+          <td ng-repeat = "tile in gameBoard[1]" ng-disabled = "isDisabled"><button class ="square" ng-click ="play(tile); disableButton()">{{ tile.value }}</button></td>
+        </tr>
+        <tr id="row3">
+          <td ng-repeat = "tile in gameBoard[2]" ng-disabled = "isDisabled"><button class ="square" ng-click ="play(tile); disableButton()">{{ tile.value }}</button></td>
+        </tr>
+      </table>
+    <p>
+      <br>
+      <span class="fr" ng-show="won">Player {{winner}} won!</span>
+      <br><br>
+  	</p>
+      <div><button class ="r" ng-click = "newGame()">N E W &nbsp;&nbsp;&nbsp;G A M E</button></div>
+      <br></br>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCnVcr8qAVuMQ_5hSh3sUgwnQ7YSYvKw9Q",
+    authDomain: "tic-tac-toe-9c56e.firebaseapp.com",
+    databaseURL: "https://tic-tac-toe-9c56e.firebaseio.com",
+    storageBucket: "bucket.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+<!-- Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+<script src="app.js"></script>
+<!--<script src="ticTacToeApp.component.js"></script> -->
+
+</body>
+
+</html>
